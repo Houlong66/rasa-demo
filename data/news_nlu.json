@@ -1,0 +1,249 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 2,
+            "end": 4,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "知道新闻"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 4,
+            "end": 6,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "能今天的新闻么"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 7,
+            "end": 9,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "你能说出最近的新闻呢"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 9,
+            "end": 11,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "你可以告诉我最近的新闻吗"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 6,
+            "end": 8,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "你可以最近的新闻呢"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 6,
+            "end": 8,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "能知道今天的新闻"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 5,
+            "end": 7,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "说出今天的新闻么"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 7,
+            "end": 9,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "你能知道今天的新闻"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 4,
+            "end": 6,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "能告诉我新闻呢"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 6,
+            "end": 8,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "你可以告诉我新闻"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 6,
+            "end": 8,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "能说出今天的新闻吗"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 7,
+            "end": 9,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "你能说出最近的新闻"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "新闻"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 5,
+            "end": 7,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "你可以知道新闻吗"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 8,
+            "end": 10,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "你可以知道最近的新闻呢"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 5,
+            "end": 7,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "你能最近的新闻么"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 4,
+            "end": 6,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "能今天的新闻"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 8,
+            "end": 10,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "你能告诉我今天的新闻吗"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 7,
+            "end": 9,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "能告诉我今天的新闻吗"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 3,
+            "end": 5,
+            "entity": "query_type",
+            "value": "新闻"
+          }
+        ],
+        "text": "告诉我新闻么"
+      }
+    ],
+    "regex_features": [],
+    "lookup_tables": [],
+    "entity_synonyms": []
+  }
+}

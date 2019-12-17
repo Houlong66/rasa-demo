@@ -24,6 +24,7 @@
 * help
     - utter_what_can_do
 * query_provider{"location":"广州", "date":"明天", "query_type":"天气"}
+    - slot{"query_type":"天气"}
     - weather_form
     - form{"name": "weather_form"}
     - form{"name": null}
@@ -35,6 +36,7 @@
 
 ## happy_path_location
 * query_provider{"location":"武汉", "query_type":"天气"}
+    - slot{"query_type":"天气"}
     - weather_form
     - form{"name": "weather_form"}
     - form{"name": null}
@@ -46,6 +48,7 @@
 
 ## happy_path_date
 * query_provider{"date":"今天", "query_type":"天气"}
+    - slot{"query_type":"天气"}
     - weather_form
     - form{"name": "weather_form"}
     - form{"name": null}
@@ -400,3 +403,75 @@
     - action_chitchat
 * chitchat
     - action_chitchat
+
+## news_story
+* greet
+    - utter_greet
+* query_provider{"query_type":"新闻"}
+	- slot{"query_type":"新闻"}
+    - action_report_news
+    - action_reset_all
+    - utter_more
+* goodbye
+    - utter_goodbye
+
+## news_story
+* query_provider{"query_type":"新闻"}
+	- slot{"query_type":"新闻"}
+    - action_report_news
+    - action_reset_all
+    - utter_more
+
+## New Story
+
+* query_provider{"date":"今天","query_type":"新闻"}
+    - slot{"date":"今天"}
+    - slot{"query_type":"新闻"}
+    - action_report_news
+    - action_reset_all
+    - utter_more
+* goodbye
+    - utter_goodbye
+
+## New Story
+
+* greet
+    - utter_greet
+* help
+    - utter_what_can_do
+* query_provider{"date":"今天","query_type":"新闻"}
+    - slot{"date":"今天"}
+    - slot{"query_type":"新闻"}
+    - action_report_news
+    - action_reset_all
+    - utter_more
+* goodbye
+    - utter_goodbye
+
+## New Story
+
+* query_provider{"date":"今天","query_type":"新闻"}
+    - slot{"date":"今天"}
+    - slot{"query_type":"新闻"}
+    - action_report_news
+    - action_reset_all
+    - utter_more
+* query_provider{"date":"今天","query_type":"天气"}
+    - slot{"date":"今天"}
+    - slot{"query_type":"天气"}
+    - weather_form
+    - form{"name":"weather_form"}
+    - slot{"date":"今天"}
+    - slot{"date":"今天"}
+    - slot{"requested_slot":"location"}
+* inform{"location":"广州"}
+    - slot{"location":"广州"}
+    - weather_form
+    - slot{"location":"广州"}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+    - search_weather
+    - action_reset_all
+    - utter_more
+* goodbye
+    - utter_goodbye

@@ -2027,14 +2027,7 @@
       }
     ],
     "regex_features": [],
-    "lookup_tables": [
-      {
-        "id": 1,
-        "name": "location",
-        "elements": "data/lookup/location",
-        "number_of_elements": 953
-      }
-    ],
+    "lookup_tables": [],
     "entity_synonyms": []
   }
 }

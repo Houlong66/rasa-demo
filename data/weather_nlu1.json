@@ -6136,10 +6136,91 @@
           }
         ],
         "text": "阳江"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 6,
+            "end": 8,
+            "entity": "query_type",
+            "value": "新闻",
+            "extractor": "CRFEntityExtractor"
+          }
+        ],
+        "text": "你知道今天的新闻吗"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 9,
+            "end": 11,
+            "entity": "query_type",
+            "value": "新闻",
+            "extractor": "CRFEntityExtractor"
+          }
+        ],
+        "text": "那你知道今天有什么新闻吗"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "entity": "date",
+            "value": "今天",
+            "extractor": "CRFEntityExtractor"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "entity": "query_type",
+            "value": "新闻",
+            "extractor": "CRFEntityExtractor"
+          }
+        ],
+        "text": "今天的新闻呢"
+      },
+      {
+        "intent": "query_provider",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "entity": "date",
+            "value": "今天",
+            "extractor": "CRFEntityExtractor"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "entity": "query_type",
+            "value": "新闻",
+            "extractor": "CRFEntityExtractor"
+          }
+        ],
+        "text": "今天的新闻"
+      },
+      {
+        "intent": "help",
+        "text": "你能做什么"
+      },
+      {
+        "intent": "help",
+        "text": "你会干什么呀"
       }
     ],
     "regex_features": [],
-    "lookup_tables": [],
+    "lookup_tables": [
+      {
+        "id": 1,
+        "name": "location",
+        "elements": "data/lookup/location",
+        "number_of_elements": 953
+      }
+    ],
     "entity_synonyms": []
   }
 }

@@ -12,7 +12,7 @@ import json
 
 LOCATION_DIR = os.path.join(os.path.dirname(
     __file__), "data/lookup/location")
-with open(LOCATION_DIR, "r") as f:
+with open(LOCATION_DIR, "r", encoding="utf-8") as f:
     LOCATION_LIST = f.read().split()
 
 VALID_DATES = ["今天", "明天", "后天"]
@@ -23,6 +23,8 @@ WEATHER_KEY = "ShPXZfvJpV50RreWx"
 CHITCHAT_URL = "http://api.qingyunke.com/api.php"
 CHITCHAT_KEY = "free"
 
+NEWS_URL = "http://v.juhe.cn/toutiao/index"
+NEWS_KEY = "f8a1db86c30c46f1d487a422c75ed4b4"
 
 def _text_to_date(date: Text):
     today = datetime.datetime.now()
@@ -160,4 +162,23 @@ class SearchWeather(Action):
         message = "{}{}的天气：{}，{}，{}-{}度"
         dispatcher.utter_message(message.format(location, date, result_date,
                                                 request_weather["text_day"], request_weather["low"], request_weather["high"]))
+        return []
+
+class ActionReportNews(Action):
+    def name(self) -> Text:
+        return "action_report_news"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        params_dict = {"key": NEWS_KEY}
+        request_result = requests.get(NEWS_URL, params=params_dict).json()
+        result = request_result.get("result", None)
+        if not result:
+            dispatcher.utter_message("新闻查询接口有误")
+            return []
+        result_data = result["data"]
+        message = "\n".join(["{}. {}:\n{}".format(index+1, item["title"], item["url"]) for (index,item) in enumerate(result_data)])
+        dispatcher.utter_message(message)
         return []

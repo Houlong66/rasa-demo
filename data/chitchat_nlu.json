@@ -113,6 +113,10 @@
       {
         "intent": "chitchat",
         "text": "就是笑你怎么啦！"
+      },
+      {
+        "intent": "chitchat",
+        "text": "没事不能找你聊天吗"
       }
     ],
     "regex_features": [],

@@ -15,7 +15,10 @@ slots:
   location:
     type: unfeaturized
   query_type:
-    type: unfeaturized
+    type: categorical
+    values:
+    - 天气
+    - 新闻
   requested_slot:
     type: unfeaturized
 templates:
@@ -23,7 +26,7 @@ templates:
   - text: 您好呀！我是iais智能机器人
   - text: 您好！
   utter_what_can_do:
-  - text: 我还在努力学习中，目前只能够帮您查天气哦
+  - text: 我还在努力学习中，目前能够查天气、查热点新闻哦。可以跟我说：今天的新闻、今天的天气。
   utter_goodbye:
   - text: 再见～
   - text: 拜拜～
@@ -40,7 +43,8 @@ templates:
   utter_more:
   - text: 还有什么可以帮您的吗？
   utter_unkown:
-  - text: 我不明白您说的话，能换个说法吗？
+  - text: 我不明白您说的话，可以试试说：你知道最近的新闻吗
+  - text: 我不明白您说的话，可以试试说：你知道今天广州的天气吗
 actions:
 - utter_greet
 - utter_goodbye
@@ -54,5 +58,6 @@ actions:
 - action_reset_all
 - search_weather
 - action_chitchat
+- action_report_news
 forms:
 - weather_form
