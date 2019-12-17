@@ -1987,10 +1987,54 @@
           }
         ],
         "text": "北京的呢"
+      },
+      {
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "entity": "location",
+            "value": "汕头",
+            "extractor": "CRFEntityExtractor"
+          }
+        ],
+        "text": "汕头呀"
+      },
+      {
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "entity": "location",
+            "value": "汕头"
+          }
+        ],
+        "text": "汕头市"
+      },
+      {
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "entity": "location",
+            "value": "汕头"
+          }
+        ],
+        "text": "汕头"
       }
     ],
     "regex_features": [],
-    "lookup_tables": [],
+    "lookup_tables": [
+      {
+        "id": 1,
+        "name": "location",
+        "elements": "data/lookup/location",
+        "number_of_elements": 953
+      }
+    ],
     "entity_synonyms": []
   }
 }

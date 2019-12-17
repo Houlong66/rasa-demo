@@ -11,7 +11,7 @@ import datetime
 import json
 
 LOCATION_DIR = os.path.join(os.path.dirname(
-    __file__), "data/lookup/location.txt")
+    __file__), "data/lookup/location")
 with open(LOCATION_DIR, "r") as f:
     LOCATION_LIST = f.read().split()
 

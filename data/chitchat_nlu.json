@@ -101,17 +101,22 @@
           }
         ],
         "text": "退下吧"
+      },
+      {
+        "intent": "chitchat",
+        "text": "你吃屎吧！"
+      },
+      {
+        "intent": "chitchat",
+        "text": "你吃吃吃"
+      },
+      {
+        "intent": "chitchat",
+        "text": "就是笑你怎么啦！"
       }
     ],
     "regex_features": [],
-    "lookup_tables": [
-      {
-        "id": 1,
-        "name": "location",
-        "elements": "data/lookup/location",
-        "number_of_elements": 953
-      }
-    ],
+    "lookup_tables": [],
     "entity_synonyms": []
   }
 }

@@ -376,3 +376,27 @@
     - utter_more
 * goodbye
     - utter_goodbye
+
+## New Story
+
+* query_provider{"date":"明天","location":"北京","query_type":"天气"}
+    - slot{"date":"明天"}
+    - slot{"location":"北京"}
+    - slot{"query_type":"天气"}
+    - weather_form
+    - form{"name":"weather_form"}
+    - slot{"location":"北京"}
+    - slot{"date":"明天"}
+    - slot{"location":"北京"}
+    - slot{"date":"明天"}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+    - search_weather
+    - action_reset_all
+    - utter_more
+* chitchat
+    - action_chitchat
+* chitchat
+    - action_chitchat
+* chitchat
+    - action_chitchat
