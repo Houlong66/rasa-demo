@@ -1,0 +1,14 @@
+__pycache__
+*.log
+failed_stories.md
+story_confmat.md
+test_env
+.vscode
+chinese_L-12_H-768_A-12/
+venv/
+*.db*
+.DS_Store
+models/*
+raw_data/
+results/
+train_test_split/

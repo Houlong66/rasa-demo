@@ -1,0 +1,58 @@
+intents:
+- greet
+- goodbye
+- help
+- inform
+- query_provider
+- chitchat
+entities:
+- location
+- date
+- query_type
+slots:
+  date:
+    type: unfeaturized
+  location:
+    type: unfeaturized
+  query_type:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+templates:
+  utter_greet:
+  - text: 您好呀！我是iais智能机器人
+  - text: 您好！
+  utter_what_can_do:
+  - text: 我还在努力学习中，目前只能够帮您查天气哦
+  utter_goodbye:
+  - text: 再见～
+  - text: 拜拜～
+  utter_ask_location:
+  - text: 哪里的呢？
+  - text: 您能告诉我哪个城市吗？
+  utter_ask_date:
+  - text: 什么时候的天气呢？
+  - text: 您能告诉我时间吗？
+  utter_wrong_date:
+  - text: 输入的时间有误，只能支持查询今天、明天和后天的天气
+  utter_wrong_location:
+  - text: 输入的城市有误
+  utter_more:
+  - text: 还有什么可以帮您的吗？
+  utter_unkown:
+  - text: 我不明白您说的话，能换个说法吗？
+actions:
+- utter_greet
+- utter_goodbye
+- utter_what_can_do
+- utter_ask_location
+- utter_ask_date
+- utter_wrong_date
+- utter_wrong_location
+- utter_unkown
+- utter_more
+- action_reset_all
+- search_weather
+- action_chitchat
+forms:
+- weather_form
