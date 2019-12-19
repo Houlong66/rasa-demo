@@ -2,7 +2,7 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, AllSlotsReset
+from rasa_sdk.events import SlotSet, AllSlotsReset, Restarted, FollowupAction
 from rasa_sdk.forms import FormAction
 
 import os
@@ -15,7 +15,7 @@ LOCATION_DIR = os.path.join(os.path.dirname(
 with open(LOCATION_DIR, "r", encoding="utf-8") as f:
     LOCATION_LIST = f.read().split()
 
-VALID_DATES = ["今天", "明天", "后天"]
+VALID_DATES = ["现在", "今天", "明天", "后天"]
 
 WEATHER_URL = "https://api.seniverse.com/v3/weather/daily.json"
 WEATHER_KEY = "ShPXZfvJpV50RreWx"
@@ -26,11 +26,12 @@ CHITCHAT_KEY = "free"
 NEWS_URL = "http://v.juhe.cn/toutiao/index"
 NEWS_KEY = "f8a1db86c30c46f1d487a422c75ed4b4"
 
+
 def _text_to_date(date: Text):
     today = datetime.datetime.now()
     one_day = datetime.timedelta(days=1)
 
-    if date == "今天":
+    if date == "今天" or date == "现在":
         result_date = today.date()
     elif date == '明天':
         result_date = (today + one_day).date()
@@ -57,6 +58,7 @@ class ActionChitchat(Action):
         }
         request_result = requests.get(CHITCHAT_URL, params=params_dict).json()
         dispatcher.utter_message(request_result["content"])
+
 
 class ActionResetAll(Action):
     """
@@ -103,7 +105,7 @@ class WeatherForm(FormAction):
     ) -> Dict[Text, Any]:
         """验证date"""
 
-        if value in VALID_DATES:
+        if not value or value in VALID_DATES:
             return {"date": value}
         else:
             dispatcher.utter_message(template="utter_wrong_date")
@@ -117,7 +119,7 @@ class WeatherForm(FormAction):
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         """验证location"""
-        if value in LOCATION_LIST:
+        if not value or value in LOCATION_LIST:
             return {"location": value}
         else:
             dispatcher.utter_message(template="utter_wrong_location")
@@ -164,6 +166,7 @@ class SearchWeather(Action):
                                                 request_weather["text_day"], request_weather["low"], request_weather["high"]))
         return []
 
+
 class ActionReportNews(Action):
     def name(self) -> Text:
         return "action_report_news"
@@ -179,6 +182,20 @@ class ActionReportNews(Action):
             dispatcher.utter_message("新闻查询接口有误")
             return []
         result_data = result["data"]
-        message = "\n".join(["{}. {}:\n{}".format(index+1, item["title"], item["url"]) for (index,item) in enumerate(result_data)])
+        message = "\n".join(["{}. {}:\n{}".format(
+            index+1, item["title"], item["url"]) for (index, item) in enumerate(result_data)])
         dispatcher.utter_message(message)
         return []
+
+
+class ActionFallback(Action):
+    def name(self):
+        return "action_fallback"
+
+    def run(self, dispatcher, tracker, domain):
+        form_name = tracker.active_form.get("name")
+        if form_name:
+            return [FollowupAction(form_name)]
+        else:
+            dispatcher.utter_template("utter_default", tracker)
+            return [Restarted()]

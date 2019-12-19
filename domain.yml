@@ -42,7 +42,7 @@ templates:
   - text: 输入的城市有误
   utter_more:
   - text: 还有什么可以帮您的吗？
-  utter_unkown:
+  utter_default:
   - text: 我不明白您说的话，可以试试说：你知道最近的新闻吗
   - text: 我不明白您说的话，可以试试说：你知道今天广州的天气吗
 actions:
@@ -53,11 +53,11 @@ actions:
 - utter_ask_date
 - utter_wrong_date
 - utter_wrong_location
-- utter_unkown
 - utter_more
 - action_reset_all
 - search_weather
 - action_chitchat
 - action_report_news
+- action_fallback
 forms:
 - weather_form
