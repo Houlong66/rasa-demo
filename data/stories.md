@@ -32,8 +32,7 @@
     - form{"name": "weather_form"}
     - form{"name": null}
     - search_weather
-    - action_reset_all
-    - utter_more
+    - action_more
     - action_restart
 
 ## happy_path_location
@@ -44,8 +43,7 @@
     - form{"name": "weather_form"}
     - form{"name": null}
     - search_weather
-    - action_reset_all
-    - utter_more
+    - action_more
     - action_restart
 
 ## happy_path_date
@@ -56,8 +54,7 @@
     - form{"name": "weather_form"}
     - form{"name": null}
     - search_weather
-    - action_reset_all
-    - utter_more
+    - action_more
     - action_restart
 
 ## unhappy_path_date
@@ -81,8 +78,7 @@
     - form{"name":null}
     - slot{"requested_slot":null}
     - search_weather
-    - action_reset_all
-    - utter_more
+    - action_more
     - action_restart
 
 ## unhappy_path_location
@@ -106,8 +102,7 @@
     - form{"name":null}
     - slot{"requested_slot":null}
     - search_weather
-    - action_reset_all
-    - utter_more
+    - action_more
     - action_restart
 
 ## very_unhappy_path
@@ -139,8 +134,7 @@
     - form{"name":null}
     - slot{"requested_slot":null}
     - search_weather
-    - action_reset_all
-    - utter_more
+    - action_more
     - action_restart
 
 ## news_story
@@ -149,8 +143,7 @@
     - slot{"query_type":"新闻"}
     - slot{"date":"今天"}
     - action_report_news
-    - action_reset_all
-    - utter_more
+    - action_more
     - action_restart
 
 ## news_greet_story
@@ -161,8 +154,7 @@
 * query_provider{"query_type":"新闻"}
     - slot{"query_type":"新闻"}
     - action_report_news
-    - action_reset_all
-    - utter_more
+    - action_more
     - action_restart
 
 ## news_chitchat_story
@@ -173,8 +165,7 @@
     - slot{"query_type":"新闻"}
     - slot{"date":"今天"}
     - action_report_news
-    - action_reset_all
-    - utter_more
+    - action_more
     - action_restart
 
 ## goodbye_deactivate_story
@@ -194,7 +185,7 @@
     - action_deactivate_form
     - form{"name":null}
     - slot{"requested_slot":null}
-    - action_reset_all
+    - action_restart
 
 ## greet_deactivate_story
 
@@ -213,7 +204,7 @@
     - action_deactivate_form
     - form{"name":null}
     - slot{"requested_slot":null}
-    - action_reset_all
+    - action_restart
 
 ## weather_news_story
 
@@ -235,6 +226,19 @@
     - action_deactivate_form
     - form{"name":null}
     - slot{"requested_slot":null}
-    - action_reset_all
-    - utter_more
+    - action_more
+    - action_restart
+
+## news_goodbye_chitchat_story
+
+* goodbye
+    - utter_goodbye
+* chitchat
+    - action_chitchat
+* query_provider{"query_type":"新闻"}
+    - slot{"query_type":"新闻"}
+    - action_report_news
+    - slot{"date":"今天"}
+    - slot{"query_type":"新闻"}
+    - action_more
     - action_restart

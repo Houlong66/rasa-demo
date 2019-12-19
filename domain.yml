@@ -40,8 +40,6 @@ templates:
   - text: 输入的时间有误，只能支持查询今天、明天和后天的天气
   utter_wrong_location:
   - text: 输入的城市有误
-  utter_more:
-  - text: 还有什么可以帮您的吗？
   utter_default:
   - text: 我不明白您说的话，可以试试说：你知道最近的新闻吗
   - text: 我不明白您说的话，可以试试说：你知道今天广州的天气吗
@@ -53,11 +51,11 @@ actions:
 - utter_ask_date
 - utter_wrong_date
 - utter_wrong_location
-- utter_more
-- action_reset_all
+- action_more
 - search_weather
 - action_chitchat
 - action_report_news
 - action_fallback
+- action_reset_all
 forms:
 - weather_form

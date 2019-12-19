@@ -9,6 +9,7 @@ pipeline:
   timeout: 100000
 - name: rasa_nlu_gao.classifiers.embedding_bert_intent_classifier.EmbeddingBertIntentClassifier
 - name: CRFEntityExtractor
+- name: EntitySynonymMapper
 policies:
 - name: MemoizationPolicy
 - name: MappingPolicy

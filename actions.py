@@ -60,18 +60,19 @@ class ActionChitchat(Action):
         dispatcher.utter_message(request_result["content"])
 
 
-class ActionResetAll(Action):
+class ActionMore(Action):
     """
     重置所有slot的action
     """
 
     def name(self) -> Text:
-        return "action_reset_all"
+        return "action_more"
 
     def run(self,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message("还有什么可以帮您的吗？")
         return [AllSlotsReset()]
 
 
@@ -134,7 +135,6 @@ class SearchWeather(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message("正在查询……")
 
         location = tracker.get_slot("location")
         date = tracker.get_slot("date")

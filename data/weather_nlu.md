@@ -6,9 +6,11 @@
 - [十堰](location)的[天气](query_type)怎样
 - 你给我查一查[后天](date)[长沙](location)[天气](query_type)吗
 - 你给我查一查[现在](date)[长沙](location)[天气](query_type)吗
+- 你给我查一查[现在](date)[长沙](location)[冷](query_type:天气)吗
 - 帮我看一看[常州](location)[后天](date)的[天气](query_type)
 - 你知道[明天](date)[柳州](location)[天气](query_type)呢
 - 请您看下[未来一周](date)[青岛](location)[天气](query_type)吗
+- 请您看下[未来一周](date)[青岛](location)[热](query_type:天气)吗
 - 您好吗请知道[昆明](location)[未来一周](date)的[天气](query_type)吗
 - 最近的[新闻](query_type)
 - [今天](date)的[新闻](query_type)
@@ -17,6 +19,11 @@
 - [清远](location)的[天气](query_type)怎样
 - [武汉](location)的[天气](query_type)怎样
 - [今天](date)的[新闻](query_type)吧
+- 你知道[今天](date)的[新闻](query_type)吗
+- [今天](date)[热](query_type:天气)吗
+- 你知道[明天](date)[冷](query_type:天气)吗
+- [现在](date)[热](query_type:天气)吗
+- [现在](date)[冷](query_type:天气)吗
 
 ## intent:greet
 - 您好
@@ -93,3 +100,10 @@
 - 您好吗能干什么
 - 你能做什么
 - 你会干什么呀
+
+## lookup:location
+  data/lookup/location
+
+## synonym:天气
+- 热
+- 冷
