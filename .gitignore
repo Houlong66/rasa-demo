@@ -12,3 +12,4 @@ models/*
 raw_data/
 results/
 train_test_split/
+tmp*
